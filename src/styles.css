@@ -1,1 +1,65 @@
 /* You can add global styles to this file, and also import other style files */
+html{
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: revolution;
+  src: url("../public/assets/fonds/Protest_Revolution/ProtestRevolution-Regular.ttf");
+}
+
+@import "tailwindcss";
+
+
+
+@theme {
+
+  --font-revolution: revolution , "sans-serif";
+
+
+}
+
+@theme {
+  --animate-fadeIn: fadeIn 0.3s ease-in-out;
+
+  @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% { opacity: 1;}
+  }
+}
+
+@theme {
+   --animate-scroll: slide-in 0.5s ease-in-out;
+
+  @keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+
+  }
+  to {
+    transform: translateX(0);
+
+  }
+}
+}
+@theme {
+   --animate-scroll2: slide-in1 0.5s ease-in-out;
+
+  @keyframes slide-in1 {
+  from {
+    transform: translateX(100%);
+
+  }
+  to {
+    transform: translateX(0%);
+
+  }
+}
+}
+
+@plugin "daisyui" {
+
+  themes: dracula --default, dark --prefersdark;
+}
+
+

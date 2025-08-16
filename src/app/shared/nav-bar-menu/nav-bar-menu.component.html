@@ -1,0 +1,60 @@
+<div class="navbar bg-base-100 shadow-sm ">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden  ">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+      </div>
+      <ul
+        tabindex="0"
+        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+        @for (title of menuTitles; track $index) {
+                <li><a [routerLink]="'home/'+title"  >{{title}}</a></li>
+              }
+      </ul>
+    </div>
+<!-- change popover-1 and --anchor-1 names. Use unique names for each dropdown -->
+<button class="ml-2 " popovertarget="popover-1" style="anchor-name:--anchor-1">
+  <a class="btn bg-red-500 text-xl font-revolution text-white "><i class="fa-regular fa-envelope   "></i></a>
+</button>
+<ul class="dropdown menu w-52 rounded-box bg-base-100 shadow-sm grid gap-2 "
+  popover id="popover-1" style="position-anchor:--anchor-1">
+  <li><button class="btn" (click)="abrirRedactorCorreo('gmail')"> <img src="/assets/images/gmail.png" alt="err.gmail" class="w-7 h-7">Gmail</button></li>
+  <li><button class="btn" (click)="abrirRedactorCorreo('outlook')"> <img src="/assets/images/outlook.png" alt="err.outlook" class="w-7 h-7">OutLook</button></li>
+  <li><button class="btn" (click)="abrirRedactorCorreo('yahoo')"> <img src="/assets/images/yahoo.png" alt="err.yahoo" class="w-7 h-7">Yahoo..</button></li>
+</ul>
+  </div>
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1 ">
+          @for (title of menuTitles; track $index) {
+                <li><a [routerLink]="'home/'+title"   >{{title}}</a></li>
+              }
+    </ul>
+  </div>
+  <div class="navbar-end ">
+        <div class=" flex justify-end gap-2" >
+          <a
+          href="https://github.com/johancpm"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-accent">
+          <i class="fa-brands fa-github"></i>
+          Git-Hub
+          </a>
+          <a
+          href="https://www.linkedin.com/in/johan-camilo-paez-mendoza-248b632a1/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-accent"
+          >
+          <i class="fa-brands fa-linkedin"></i>
+           Linkedink
+          </a>
+        </div>
+  </div>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+<section class="contentTtoal ">
+  <div class="content max-w-5xl m-auto mt-5 animate-fadeIn ">
+    <div class="title text-center">
+      <h1 id="proyectos" class="text-4xl font-bold">Proyectos</h1>
+    </div>
+      <div class="divider"></div>
+      <div class=" flex flex-wrap  justify-center  gap-2 ">
+      @for (proyecto of proyectos; track $index; let i = $index) {
+          <app-proyect [proyecto]="proyecto"  [id]="i"  />
+
+        }
+
+      </div>
+  </div>
+</section>

@@ -1,0 +1,89 @@
+
+
+
+  <div class="infoTotal p-4 w-fit justify-center m-2 gap-2 rounded-4xl bg-blue-500/20  " [id]="id()">
+    <div class="contentTitle m-3 w-fit">
+      <h1 class="text-2xl font-bold font-revolution text-accent ">{{proyecto().title}}</h1>
+    </div>
+    <div class="contentImgInfo gap-3 flex flex-wrap   overflow-hidden  w-fit ">
+      @if(idProyect === id()){
+        <div class="infoTecnologies max-w-xs gap-2 animate-fadeIn" id="info">
+          <div class="info" >
+            <p>{{proyecto().info}}</p>
+          </div>
+          @for (tecno of proyecto().tecnologies; track $index) {
+           <div [class]="'badge badge-dash mr-3 gap-1 mt-3 mb-0  '+tecno.color">
+            <img class="w-5" [src]="tecno.icon" [alt]="proyecto().title">
+            {{tecno.name}}
+          </div>
+          }
+        </div>
+      }
+      <div class="image max-w-2xs  " [id]="proyecto().title">
+        <img class="rounded-2xl w-fit" [src]="proyecto().img" [alt]="proyecto().title">
+      </div>
+    </div>
+    @if(idProyect == id()){
+    <div class="redirectLinks flex gap-2 mt-5" >
+      @if (proyecto().gitLink) {
+        <a
+        [href]="proyecto().gitLink"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-circle bg-transparent border-amber-50"
+        >
+          <i  class="fa-brands fa-github text-2xl"></i>
+       </a>
+      }
+      @if (proyecto().link) {
+        <a
+        [href]="proyecto().link"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-circle bg-transparent border-amber-50"
+        >
+          <i class="fa-solid fa-link"></i>
+       </a>
+      }
+    </div>
+  }
+    <div class="divider "></div>
+     <div class="mb-2">
+      @if(idProyect != id()){
+        <button class="btn btn-outline btn-warning " id="mas" (click)="viewDetailsProyect(id());  ">Ver Mas</button>
+      }@else if(idProyect == id()) {
+        <div class=" flex justify-end">
+          <button class="btn btn-outline btn-error ml-2 " id="menos" (click)="viewDetailsProyect(id());  "><i class="fa-solid fa-arrow-left"></i></button>
+        </div>
+      }
+    </div>
+
+  </div>
+
+
+<!-- <div class="infoTotal p-4 m-4 grid sm:grid-cols-1 lg:grid-cols-2 gap-2 rounded-4xl bg-blue-500/20"></div> -->
+
+<!-- <div class="infoContent m-auto xl:flex sm:grid-cols-1  ">
+  <div class=" p-3 max-w-xs  ">
+    <h1 class="text-2xl font-bold font-revolution text-accent">{{proyecto().title}}</h1>
+    <p>{{proyecto().info}}</p>
+    <div class="flex gap-2">
+      @for (tecno of proyecto().tecnologies; track $index) {
+
+        <div [class]="'badge badge-dash  mt-3 mb-0 '+tecno.color"><img class="w-5" [src]="tecno.icon" [alt]="proyecto().title">{{tecno.name}}</div>
+      }
+    </div>
+    <div class="divider"></div>
+    <div class="redirectLinks flex gap-2">
+      <button class="btn btn-circle bg-transparent border-amber-50">
+        <i  class="fa-brands fa-github text-2xl"></i>
+     </button>
+      <button class="btn btn-circle bg-transparent border-amber-50">
+        <i class="fa-solid fa-link"></i>
+     </button>
+    </div>
+  </div>
+</div>
+<div class="imgContent m-auto mt-5 max-w-xs max-h-xs grid sm:justify-start ">
+  <img class="rounded-2xl" [src]="proyecto().img" [alt]="proyecto().title">
+</div> -->
