@@ -1,32 +1,12 @@
 <section class="contenTotal mt-15">
   <div class="content max-w-4xl m-auto animate-fadeIn">
     <div class="title text-center ">
-      <h1 id="estudios" class="text-4xl font-bold ">Mis Estudios</h1>
+      <h1 id="Formacion" class="text-4xl font-bold ">Formación</h1>
     </div>
     <div class="divider"></div>
-    <div class="contentInfo md:flex  p-5 gap-5 bg-blue-500/20 rounded-2xl m-10 items-center">
-        <div class="content md:flex gap-3 mb-5 ">
-          <div class="logo w-15 h-15 rounded-full overflow-hidden ">
-            <img src="/assets/images/sena1.png" alt="">
-          </div>
-          <div class="info max-w-lg">
-            <h1 class="text-2xl font-bold">Servicio Nacional de Aprendizaje | SENA</h1>
-            <h2 class="text-1xl font-bold">Sede Ocaña:</h2>
-             <p>
-                Técnico en programación de software, 6 meses de etapa
-                lectiva del 15 de abril del 2021 hasta 18 de diciembre del
-                2021 y etapa productiva de 03 de marzo de 2022 al 02
-                septiembre del 2022.
-             </p>
-          </div>
-        </div>
-        <div class="content flex  items-center gap-5 p-3 bg-amber-300/10 rounded-2xl h-fit w-fit  ">
-          <h3>Certificado</h3>
-          <button class="btn btn-circle bg-transparent border-amber-50 ">
-                <i class="fa-solid fa-link"></i>
-             </button>
-        </div>
-    </div>
+   @for (studie of studies; track $index) {
+     <app-studies [studie]="studie" />
+   }
+  <div class="divider"></div>
   </div>
-
 </section>

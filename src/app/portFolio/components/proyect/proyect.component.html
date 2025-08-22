@@ -1,7 +1,7 @@
 
 
 
-  <div class="infoTotal p-4 w-fit justify-center m-2 gap-2 rounded-4xl bg-blue-500/20  " [id]="id()">
+  <div class="infoTotal p-4 w-fit justify-center m-2 gap-2 rounded-xl bg-gray-500/40 animate-fadeIn shadow-xl "  [id]="id()">
     <div class="contentTitle m-3 w-fit">
       <h1 class="text-2xl font-bold font-revolution text-accent ">{{proyecto().title}}</h1>
     </div>
@@ -13,14 +13,14 @@
           </div>
           @for (tecno of proyecto().tecnologies; track $index) {
            <div [class]="'badge badge-dash mr-3 gap-1 mt-3 mb-0  '+tecno.color">
-            <img class="w-5" [src]="tecno.icon" [alt]="proyecto().title">
+            <img class="w-5" [src]="tecno.icon" alt="err">
             {{tecno.name}}
           </div>
           }
         </div>
       }
       <div class="image max-w-2xs  " [id]="proyecto().title">
-        <img class="rounded-2xl w-fit" [src]="proyecto().img" [alt]="proyecto().title">
+        <img class="rounded-lg " [src]="proyecto().img" [alt]="proyecto().title">
       </div>
     </div>
     @if(idProyect == id()){
@@ -30,7 +30,7 @@
         [href]="proyecto().gitLink"
         target="_blank"
         rel="noopener noreferrer"
-        class="btn btn-circle bg-transparent border-amber-50"
+        class="btn btn-circle btn-outline  "
         >
           <i  class="fa-brands fa-github text-2xl"></i>
        </a>
@@ -40,7 +40,7 @@
         [href]="proyecto().link"
         target="_blank"
         rel="noopener noreferrer"
-        class="btn btn-circle bg-transparent border-amber-50"
+        class="btn btn-circle btn-outline  "
         >
           <i class="fa-solid fa-link"></i>
        </a>
@@ -50,10 +50,10 @@
     <div class="divider "></div>
      <div class="mb-2">
       @if(idProyect != id()){
-        <button class="btn btn-outline btn-warning " id="mas" (click)="viewDetailsProyect(id());  ">Ver Mas</button>
+        <button class="btn btn-outline btn-warning " [id]="proyecto().title" (click)="viewDetailsProyect(id());  ">Ver Mas</button>
       }@else if(idProyect == id()) {
         <div class=" flex justify-end">
-          <button class="btn btn-outline btn-error ml-2 " id="menos" (click)="viewDetailsProyect(id());  "><i class="fa-solid fa-arrow-left"></i></button>
+          <button class="btn btn-outline btn-error ml-2 " [id]="proyecto().title"  (click)="viewDetailsProyect(id());  "><i class="fa-solid fa-arrow-left"></i></button>
         </div>
       }
     </div>

@@ -15,9 +15,9 @@ export interface Technologies{
 }
 
 export enum Colors {
-  angular = 'badge-error',
-  typescript = 'badge-info',
-  javascript = 'badge-warning',
-  java = 'badge-accent',
-  nest = 'badge-error'
+  angular = "badge-error",
+  typescript = "badge-info",
+  javascript = "badge-warning",
+  java = "badge-accent",
+  nest = "badge-error"
 }

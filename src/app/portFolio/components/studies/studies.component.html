@@ -1,1 +1,23 @@
-<p>studies works!</p>
+<ul class=" bg-gray-700/30 rounded-box shadow-md p-5 m-3">
+  <li class=" grid grid-cols-1 lg:grid-cols-2 p-5 r">
+        <div class="flex flex-wrap lg:flex-nowrap ">
+          <img class="size-10 rounded-box mr-5 mb-2" [src]="studie().img"/>
+          <div >
+            <div>{{studie().title}}</div>
+            <div class="text-xs uppercase font-semibold opacity-60">{{studie().subTtitle}}</div>
+            <p class="list-col-wrap text-xs">
+             {{studie().info}}
+            </p>
+          </div>
+        </div>
+        <div class="flex justify-center m-5 mt-8">
+          <a
+           [href]="studie().ceLink"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn-outline btn-accent">
+           Certificado <i class="fa-solid fa-file-lines"></i>
+          </a>
+        </div>
+       </li>
+</ul>

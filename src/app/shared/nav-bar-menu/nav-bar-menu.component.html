@@ -8,25 +8,24 @@
         tabindex="0"
         class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
         @for (title of menuTitles; track $index) {
-                <li><a [routerLink]="'home/'+title"  >{{title}}</a></li>
+                <li><a [routerLink]="'home/'+title"  >{{title | titlecase}}</a></li>
               }
       </ul>
     </div>
 <!-- change popover-1 and --anchor-1 names. Use unique names for each dropdown -->
-<button class="ml-2 " popovertarget="popover-1" style="anchor-name:--anchor-1">
-  <a class="btn bg-red-500 text-xl font-revolution text-white "><i class="fa-regular fa-envelope   "></i></a>
-</button>
-<ul class="dropdown menu w-52 rounded-box bg-base-100 shadow-sm grid gap-2 "
-  popover id="popover-1" style="position-anchor:--anchor-1">
-  <li><button class="btn" (click)="abrirRedactorCorreo('gmail')"> <img src="/assets/images/gmail.png" alt="err.gmail" class="w-7 h-7">Gmail</button></li>
-  <li><button class="btn" (click)="abrirRedactorCorreo('outlook')"> <img src="/assets/images/outlook.png" alt="err.outlook" class="w-7 h-7">OutLook</button></li>
-  <li><button class="btn" (click)="abrirRedactorCorreo('yahoo')"> <img src="/assets/images/yahoo.png" alt="err.yahoo" class="w-7 h-7">Yahoo..</button></li>
-</ul>
+
+  <a
+   href="mailto:johanpaezmendoza@gmail.com"
+   class="btn bg-red-500 text-white ">
+   <i class="fa-regular fa-envelope text-xl "></i>
+   <p class="hidden md:block">Enviar Correo</p>
+  </a>
+
   </div>
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1 ">
           @for (title of menuTitles; track $index) {
-                <li><a [routerLink]="'home/'+title"   >{{title}}</a></li>
+                <li><a [routerLink]="'home/'+title"   >{{title | titlecase}}</a></li>
               }
     </ul>
   </div>

@@ -3,12 +3,13 @@ import { DataInfoComponent } from "../../pages/data-info/data-info.component";
 import { SkillsInfoComponent } from "../../pages/skills-info/skills-info.component";
 import { ProyectInfoComponent } from "../../pages/proyect-info/proyect-info.component";
 import { StudiesInfoComponent } from "../../pages/studies-info/studies-info.component";
-import { RouterOutlet } from '@angular/router';
+
+import { ExperienceInfoComponent } from "../../pages/experience-info/experience-info.component";
 
 
 @Component({
   selector: 'app-home-page',
-  imports: [ DataInfoComponent, SkillsInfoComponent, ProyectInfoComponent, StudiesInfoComponent],
+  imports: [DataInfoComponent, SkillsInfoComponent, ProyectInfoComponent, StudiesInfoComponent, ExperienceInfoComponent],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css'
 })

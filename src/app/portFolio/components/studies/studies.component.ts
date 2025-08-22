@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { Studies } from '../../interfaces/studies-interface';
 
 @Component({
   selector: 'app-studies',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './studies.component.css'
 })
 export class StudiesComponent {
-
+ studie = input.required<Studies>();
 }

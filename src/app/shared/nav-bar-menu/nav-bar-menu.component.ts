@@ -3,17 +3,19 @@ import { NavigationEnd, NavigationStart, Router, RouterLink } from '@angular/rou
 
 import { filter, map, tap } from 'rxjs';
 import { routes } from '../../app.routes';
+import { TitleCasePipe } from '@angular/common';
 
 
 export enum IteMenu {
-  skill = 'habilidades',
+  skill = 'Tecnologias',
+  experience = 'experiencia',
   proyect= 'proyectos',
-  studies = 'estudios'
+  studies = 'Formacion',
 }
 
 @Component({
   selector: 'app-nav-bar-menu',
-  imports: [RouterLink],
+  imports: [RouterLink, TitleCasePipe],
   templateUrl: './nav-bar-menu.component.html',
   styleUrl: './nav-bar-menu.component.css'
 })
@@ -21,20 +23,6 @@ export class NavBarMenuComponent  {
 
 
    router = inject(Router);
-   abrirRedactorCorreo(emails: string) {
-       const email = 'johanpaezmendoza@gmail.com';
-       let url = null;
-       if(emails == 'gmail'){
-         url = `https://mail.google.com/mail/?view=cm&to=${email}`;
-
-       }else if(emails == 'outlook'){
-           url = `https://outlook.live.com/mail/0/compose?to=${email}`;
-
-       }else{
-         url =`https://compose.mail.yahoo.com/?to=${email}`;
-       }
-       window.open(url );
-     }
 
     menuTitles =  Object.values(IteMenu) ;
 
@@ -64,7 +52,7 @@ export class NavBarMenuComponent  {
  onWindowScroll(){
   const scrollPosition = window.pageYOffset;
   const section1 = document.getElementById('inf')!.offsetLeft;
-  const section2 = document.getElementById('habilidades')!.offsetLeft;
+  const section2 = document.getElementById('Tecnologias')!.offsetLeft;
 
 
   if (scrollPosition >= section1 && scrollPosition < section2) {
