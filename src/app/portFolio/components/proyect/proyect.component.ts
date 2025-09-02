@@ -19,9 +19,9 @@ export class ProyectComponent {
 
     const elemtImg = document.getElementById(this.proyecto().title);
     const elemtDiv = document.getElementById(this.id().toString());
-    const elemtDiv1 = document.getElementById('proyectos')
 
-    if(elemtDiv && elemtDiv1){
+
+    if(elemtDiv ){
       setTimeout(() => {
         if(this.idProyect === this.id()){
           elemtDiv.scrollIntoView({
@@ -30,7 +30,7 @@ export class ProyectComponent {
            inline: 'nearest'
           })
         }else if(this.idProyect != this.id()){
-           elemtDiv1.scrollIntoView({
+           elemtDiv.scrollIntoView({
            behavior: 'smooth',
            block: 'start',
            inline: 'nearest'

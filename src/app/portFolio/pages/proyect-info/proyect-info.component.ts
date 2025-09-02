@@ -25,7 +25,7 @@ export class ProyectInfoComponent {
     },
     {
 
-      title: 'Teslo-Shop',
+      title: 'ovni-Art',
       info: 'Tienda virtual de ropa, nos permite ver los diferentes productos por género, Implementa una paginación para visualizar de mejor forma todos los productos, también cuenta con un formulario de inicio de sesión y de registro. Se puede acceder con una cuenta autorizada a un panel administrativo para actualizar o subir nuevos productos.',
       img: '/assets/images/teslo.png',
       tecnologies: [
@@ -34,7 +34,7 @@ export class ProyectInfoComponent {
         { name: 'Nest.js', icon: '/assets/images/nest.png', color: Colors.nest },
         { name: 'SQL', icon: '/assets/images/sql.png', color: Colors.typescript },
       ],
-      link: 'https://teslo-shop-jcpm.netlify.app/#/gender/men',
+      link: 'https://ovni-art-jcpm.netlify.app/',
       gitLink: 'https://github.com/johancpm/teslo-shop-front-end.git'
     },
     {
